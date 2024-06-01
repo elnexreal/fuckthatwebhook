@@ -10,8 +10,8 @@ Download the [.NET 8.0 Runtime](https://dotnet.microsoft.com/en-us/download/dotn
 
 - [x] Flood a Webhook with a message.
 - [x] Send individual messages.
-- [] Send embeds.
-- [] Send images.
+- [ ] Send embeds.
+- [ ] Send images.
 
 ## Build
 
