@@ -2,6 +2,10 @@
 
 Wreck those Discord Webhooks with this simple WPF app.
 
+# Disclaimer
+
+<center> <b> I'M NOT RESPONSIBLE FOR ANY DAMAGE CAUSED BY THE USE OF THIS PROGRAM. </b> </center>
+
 ## Notes
 
 Download the [.NET 8.0 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) if you don't have it already.
