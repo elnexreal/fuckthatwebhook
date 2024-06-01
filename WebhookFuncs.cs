@@ -6,7 +6,7 @@ namespace fuckthatwebhook
 	internal class WebhookFuncs
 	{
 		private readonly HttpClient _httpClient;
-		private bool isRunning;
+		public bool isRunning;
 
 		public WebhookFuncs()
 		{
@@ -27,10 +27,15 @@ namespace fuckthatwebhook
 			request.Content = body;
 			var response = await _httpClient.SendAsync(request);
 
+			if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
+			{
+				MessageBox.Show("BAD REQUEST (text must contain at least one letter, not only whitespace)");
+			}
+
 			return response;
 		}
 
-		public async void SpamHook(string text, string url)
+		public async void StartSpammer(string text, string url)
 		{
 			isRunning = true;
 
@@ -38,22 +43,16 @@ namespace fuckthatwebhook
 			{
 				try
 				{
-					var req = await SendRequest(text, url);
-
-					if (req.StatusCode == System.Net.HttpStatusCode.BadRequest)
-					{
-						MessageBox.Show("BAD REQUEST (text must contain at least one letter, not only whitespace)");
-						break;
-					}
+					await SendRequest(text, url);
 				}
-				catch (Exception ex) 
+				catch (Exception ex)
 				{
 					MessageBox.Show(ex.Message);
 					break;
 				}
 			}
 		}
-		public void StopSpam()
+		public void StopSpammer()
 		{
 			isRunning = false;
 		}
@@ -62,12 +61,7 @@ namespace fuckthatwebhook
 		{
 			try
 			{
-				var req = await SendRequest(text, url);
-
-				if (req.StatusCode == System.Net.HttpStatusCode.BadRequest)
-				{
-					MessageBox.Show("BAD REQUEST (text must contain at least one letter, not only whitespace)");
-				}
+				await SendRequest(text, url);
 			}
 			catch (Exception ex)
 			{
