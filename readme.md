@@ -1,10 +1,8 @@
-﻿# FuckThatWebhook
+﻿<h1 align="center"> <b> I'M NOT RESPONSIBLE FOR ANY DAMAGE CAUSED BY THE USE OF THIS PROGRAM. </b> </h1>
+
+# FuckThatWebhook
 
 Wreck those Discord Webhooks with this simple WPF app.
-
-# Disclaimer
-
-<center> <b> I'M NOT RESPONSIBLE FOR ANY DAMAGE CAUSED BY THE USE OF THIS PROGRAM. </b> </center>
 
 ## Notes
 
