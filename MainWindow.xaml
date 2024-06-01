@@ -17,8 +17,8 @@
 				</Grid.ColumnDefinitions>
 
 				<TextBlock Text="FuckThatWebhook" Foreground="#ffffff" FontSize="20px" FontFamily="/fonts/#Stretch Pro" Grid.Column="0" />
-				<TextBlock Text="1.0" HorizontalAlignment="Right" VerticalAlignment="Center" Opacity="0.3" />
-				<Button Style="{StaticResource btnStyle}" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Content="Github" Click="GitHubBtn" />
+				<TextBlock Text="1.1" HorizontalAlignment="Right" VerticalAlignment="Center" Opacity="0.3" />
+				<Button Style="{StaticResource btnStyle}" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Content="Github" Click="BtnHandler" />
 			</Grid>
 		</StackPanel>
 
@@ -26,7 +26,7 @@
 			<!--Webhook url-->
 			<StackPanel Background="#323232">
 				<TextBlock Text="Webhook URL" FontSize="20px" Padding="10px"/>
-				<TextBox x:Name="urlTextBox" Style="{StaticResource txtBoxStyle}"/>
+				<TextBox x:Name="UrlTextBox" Style="{StaticResource txtBoxStyle}"/>
 			</StackPanel>
 
 			<!--Tools n stuff-->
@@ -42,19 +42,19 @@
 
 				<!--String spam-->
 				<StackPanel Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10, 20" Background="#323232">
-					<TextBlock Text="Spam text" TextAlignment="Center" FontSize="24px" />
-					<TextBox Style="{StaticResource txtBoxStyle}" Height="100px" AcceptsReturn="True" x:Name="spamTextBox" />
+					<TextBlock Text="Spammer" TextAlignment="Center" FontSize="24px" />
+					<TextBox Style="{StaticResource txtBoxStyle}" Height="100px" AcceptsReturn="True" x:Name="SpamTextBox" />
 					<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-						<Button Content="Start spamming!" Style="{StaticResource btnStyle}" Margin="5px" Click="StartSpam" />
-						<Button Content="Stop!" Style="{StaticResource btnStyle}" Margin="5px" Click="StopSpam" />
+						<Button Content="Start spamming!" Style="{StaticResource btnStyle}" Margin="5px" Click="BtnHandler" x:Name="SpamBtn" />
+						<Button Content="Stop!" Style="{StaticResource btnStyle}" Margin="5px" Click="BtnHandler" x:Name="StopBtn" />
 					</StackPanel>
 				</StackPanel>
 
 				<!--Individual msg-->
 				<StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10, 20" Background="#323232">
 					<TextBlock Text="Send message" TextAlignment="Center" FontSize="24px" />
-					<TextBox Style="{StaticResource txtBoxStyle}" Height="100px" AcceptsReturn="True" x:Name="msgTextBox" />
-					<Button Content="Send message!" Style="{StaticResource btnStyle}" HorizontalAlignment="Center" Margin="5px" Click="SendMessage" />
+					<TextBox Style="{StaticResource txtBoxStyle}" Height="100px" AcceptsReturn="True" x:Name="MsgTextBox" />
+					<Button Content="Send message!" Style="{StaticResource btnStyle}" HorizontalAlignment="Center" Margin="5px" Click="BtnHandler" x:Name="SendMsgBtn" />
 				</StackPanel>
 			</Grid>
 		</StackPanel>
