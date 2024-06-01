@@ -1,0 +1,62 @@
+﻿<Window x:Class="fuckthatwebhook.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:fuckthatwebhook"
+		mc:Ignorable="d"
+		Title="FuckThatWebhook" Width="640" Height="680" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen"
+		Foreground="#ffffff" Background="#454545">
+
+	<StackPanel>
+		<StackPanel Background="#323232">
+			<Grid Margin="20px">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+
+				<TextBlock Text="FuckThatWebhook" Foreground="#ffffff" FontSize="20px" FontFamily="/fonts/#Stretch Pro" Grid.Column="0" />
+				<TextBlock Text="1.0" HorizontalAlignment="Right" VerticalAlignment="Center" Opacity="0.3" />
+				<Button Style="{StaticResource btnStyle}" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Content="Github" Click="GitHubBtn" />
+			</Grid>
+		</StackPanel>
+
+		<StackPanel Margin="20px">
+			<!--Webhook url-->
+			<StackPanel Background="#323232">
+				<TextBlock Text="Webhook URL" FontSize="20px" Padding="10px"/>
+				<TextBox x:Name="urlTextBox" Style="{StaticResource txtBoxStyle}"/>
+			</StackPanel>
+
+			<!--Tools n stuff-->
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*" />
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
+
+				<!--String spam-->
+				<StackPanel Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10, 20" Background="#323232">
+					<TextBlock Text="Spam text" TextAlignment="Center" FontSize="24px" />
+					<TextBox Style="{StaticResource txtBoxStyle}" Height="100px" AcceptsReturn="True" x:Name="spamTextBox" />
+					<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+						<Button Content="Start spamming!" Style="{StaticResource btnStyle}" Margin="5px" Click="StartSpam" />
+						<Button Content="Stop!" Style="{StaticResource btnStyle}" Margin="5px" Click="StopSpam" />
+					</StackPanel>
+				</StackPanel>
+
+				<!--Individual msg-->
+				<StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10, 20" Background="#323232">
+					<TextBlock Text="Send message" TextAlignment="Center" FontSize="24px" />
+					<TextBox Style="{StaticResource txtBoxStyle}" Height="100px" AcceptsReturn="True" x:Name="msgTextBox" />
+					<Button Content="Send message!" Style="{StaticResource btnStyle}" HorizontalAlignment="Center" Margin="5px" Click="SendMessage" />
+				</StackPanel>
+			</Grid>
+		</StackPanel>
+	</StackPanel>
+</Window>
